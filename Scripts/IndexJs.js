@@ -33,6 +33,7 @@ function toString(string){
     }
     return tempLine
 }
+//using a class dont need but wanted to test
  class Person  {
     constructor(ID, Name, Occupation, age ) {
         this.ID = ID
@@ -64,6 +65,8 @@ thead.classList.add("table-dark")
 let tr = document.createElement("tr");
 
 //header
+//i should have created a seperated header and body
+//but since i was testing stuff i made a header, but the body has all data
 let headerCellarr = []
 for(let i = 0; i < 4; i++)
 {
@@ -83,7 +86,6 @@ for (const item of persons) {
         }
             //only need the first person which is going to be the header
             break;
-        
     }
 // let headerCell1 = document.createElement("th");
 // headerCell1.textContent = persons[0].ID;
@@ -107,88 +109,95 @@ table.appendChild(thead);
 let tbody = document.createElement("tbody")
 //
 let tableDatArr = []
-for(let i = 0; i < 16; i++)
+for(let i = 0; i < 20; i++)
 {
     tableDatArr.push(document.createElement("td"))
 }
+count = 0
 let tr2 = document.createElement("tr");
 for (const item of persons) {
-    for(const [index, value] of persons.entries()){
-       
-        if(index >=4)
-        {
-            tableDatArr[count].textContent = value
-            console.log("sdfs")
-        }
-        
-        
+    for(const value of Object.values(item)){
+      
+       tableDatArr[count].textContent = value
+       count++
     }
 }
-let td1 = document.createElement("td")
-let td2 = document.createElement("td")
-let td3 = document.createElement("td")
-let td4 = document.createElement("td")
-//
+// let td1 = document.createElement("td")
+// let td2 = document.createElement("td")
+// let td3 = document.createElement("td")
+// let td4 = document.createElement("td")
 
-td1.textContent = cell[4]
-td2.textContent = cell[5]
-td3.textContent = cell[6]
-td4.textContent = cell[7]
+// td1.textContent = cell[4]
+// td2.textContent = cell[5]
+// td3.textContent = cell[6]
+// td4.textContent = cell[7]
 //
-for(let i = 5; i < 8;i++){
-tr2.appendChild(tableDatArr[i])
+for(let i = 4; i < 8; i++)
+{
+    tr2.appendChild(tableDatArr[i])
 }
-tr2.appendChild(td1)
-tr2.appendChild(td2)
-tr2.appendChild(td3)
-tr2.appendChild(td4)
-let tr3 = document.createElement("tr");
-let td5 = document.createElement("td")
-let td6 = document.createElement("td")
-let td7 = document.createElement("td")
-let td8 = document.createElement("td")
+// tr2.appendChild(td1)
+// tr2.appendChild(td2)
+// tr2.appendChild(td3)
+// tr2.appendChild(td4)
 
-td5.textContent = cell[8]
-td6.textContent = cell[9]
-td7.textContent = cell[10]
-td8.textContent = cell[11]
+ let tr3 = document.createElement("tr");
+// let td5 = document.createElement("td")
+// let td6 = document.createElement("td")
+// let td7 = document.createElement("td")
+// let td8 = document.createElement("td")
 
-tr3.appendChild(td5)
-tr3.appendChild(td6)
-tr3.appendChild(td7)
-tr3.appendChild(td8)
+// td5.textContent = cell[8]
+// td6.textContent = cell[9]
+// td7.textContent = cell[10]
+// td8.textContent = cell[11]
+
+for(let i = 8; i < 12; i++)
+    {
+        tr3.appendChild(tableDatArr[i])
+    }
+// tr3.appendChild(td5)
+// tr3.appendChild(td6)
+// tr3.appendChild(td7)
+// tr3.appendChild(td8)
 
 let tr4 = document.createElement("tr");
-let td9 = document.createElement("td")
-let td10 = document.createElement("td")
-let td11 = document.createElement("td")
-let td12 = document.createElement("td")
+// let td9 = document.createElement("td")
+// let td10 = document.createElement("td")
+// let td11 = document.createElement("td")
+// let td12 = document.createElement("td")
 
-td9.textContent = cell[12]
-td10.textContent = cell[13]
-td11.textContent = cell[14]
-td12.textContent = cell[15]
-
-tr4.appendChild(td9)
-tr4.appendChild(td10)
-tr4.appendChild(td11)
-tr4.appendChild(td12)
+// td9.textContent = cell[12]
+// td10.textContent = cell[13]
+// td11.textContent = cell[14]
+// td12.textContent = cell[15]
+for(let i = 12; i < 16; i++)
+    {
+        tr4.appendChild(tableDatArr[i])
+    }
+// tr4.appendChild(td9)
+// tr4.appendChild(td10)
+// tr4.appendChild(td11)
+// tr4.appendChild(td12)
 
 let tr5 = document.createElement("tr");
-let td13 = document.createElement("td")
-let td14 = document.createElement("td")
-let td15 = document.createElement("td")
-let td16 = document.createElement("td")
+// let td13 = document.createElement("td")
+// let td14 = document.createElement("td")
+// let td15 = document.createElement("td")
+// let td16 = document.createElement("td")
 
-td13.textContent = cell[16]
-td14.textContent = cell[17]
-td15.textContent = cell[18]
-td16.textContent = cell[19]
-
-tr5.appendChild(td13)
-tr5.appendChild(td14)
-tr5.appendChild(td15)
-tr5.appendChild(td16)
+// td13.textContent = cell[16]
+// td14.textContent = cell[17]
+// td15.textContent = cell[18]
+// td16.textContent = cell[19]
+for(let i = 16; i < 20; i++)
+    {
+        tr5.appendChild(tableDatArr[i])
+    }
+// tr5.appendChild(td13)
+// tr5.appendChild(td14)
+// tr5.appendChild(td15)
+// tr5.appendChild(td16)
 //add to body
 tbody.appendChild(tr2)
 tbody.appendChild(tr3)
