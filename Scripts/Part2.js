@@ -59,3 +59,6 @@ for(let i = 0; i < numCol; i++)
         }
         document.write("<br>")
     }
+//cache the array for some reason
+let cache = rowAndcol
+console.log(rowAndcol)
