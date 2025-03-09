@@ -35,9 +35,26 @@ function toString(string){
     }
     return tempLine
 }
+function countRow(string,delimiter){
+   let count = 0
+    
+    for(let i = 0; i < string.length; i++)
+    {
+       
+         if(string[i] == delimiter)
+        {
+            count++
+        }
+        
+        else if(string[i] == "\n"){
+           return count
+        }    
+       
+}
+}
 
 let  strData = "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26"
-
+let numRow = countRow(strData,",")
 let row = split(strData,"\n")
 let cell = split(toString(row),",")
 
@@ -52,7 +69,7 @@ document.write("<br>")
 let k = 0 
 for(let i = 0; i < numCol; i++)
     {
-        for(let j = 0; j < numCol-1;j++){
+        for(let j = 0; j <= numRow;j++){
             rowAndcol[i][j] = cell[k] 
             document.write(rowAndcol[i][j] +" ")
             k++

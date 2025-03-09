@@ -53,10 +53,9 @@ const persons = []
 
 let rowLength = row.length
 let collength =row.length
-console.log(rowLength)
-console.log(cell.length)
+
 //still hate Js
-let rowAndcol = Array.from({ length: 10}, () => Array(10).fill(null))
+let rowAndcol = Array.from({ length: rowLength}, () => Array(rowLength).fill(null))
 
 
 for(let i = 0 ,j =0; i < cell.length / 4 ; i++)
@@ -134,8 +133,14 @@ for(let h =0; h <persons.length; h++)
 {
     sum +=  parseInt(persons[h].age)
 }
+document.write("This is the sum of the ages: " + sum)
+console.log("This is the sum of the ages: " + sum)
+document.write("<br>")
+sum =  parseInt(sum) / persons.length
+console.log("This is the avg of the ages: " + sum)
+document.write("This is the avg of the ages: " + sum)
    
-    document.write("This is the sum of the ages: " + sum)
+   
 
 document.write("</table>")
 
